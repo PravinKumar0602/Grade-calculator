@@ -4,7 +4,7 @@ public class GradeCalculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Input Student Details
+   
         System.out.print("Enter Student Name: ");
         String name = scanner.nextLine();
 
@@ -14,18 +14,17 @@ public class GradeCalculator {
         double[] marks = new double[numSubjects];
         double total = 0;
 
-        // Input Marks
+    
         for (int i = 0; i < numSubjects; i++) {
             System.out.print("Enter marks for subject " + (i + 1) + " (out of 100): ");
             marks[i] = scanner.nextDouble();
             total += marks[i];
         }
 
-        // Calculations
+   
         double average = total / numSubjects;
         String grade = calculateGrade(average);
 
-        // Display Results
         System.out.println("\n--- Performance Report ---");
         System.out.println("Student Name: " + name);
         System.out.println("Total Marks: " + total);
