@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        h2 {
+            color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Student Grade Calculator</h2>
+
+        <input type="text" id="name" placeholder="Enter Student Name">
+
+        <input type="number" id="sub1" placeholder="Enter Subject 1 Marks">
+
+        <input type="number" id="sub2" placeholder="Enter Subject 2 Marks">
+
+        <input type="number" id="sub3" placeholder="Enter Subject 3 Marks">
+
+        <button onclick="calculateGrade()">Calculate</button>
+
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function calculateGrade() {
+
+            let name = document.getElementById("name").value;
+
+            let s1 = parseFloat(document.getElementById("sub1").value);
+
+            let s2 = parseFloat(document.getElementById("sub2").value);
+
+            let s3 = parseFloat(document.getElementById("sub3").value);
+
+            let total = s1 + s2 + s3;
+
+            let average = total / 3;
+
+            let grade = "";
+
+            if (average >= 90)
+                grade = "A+";
+            else if (average >= 80)
+                grade = "A";
+            else if (average >= 70)
+                grade = "B";
+            else if (average >= 60)
+                grade = "C";
+            else if (average >= 50)
+                grade = "D";
+            else
+                grade = "Fail";
+
+            document.getElementById("result").innerHTML =
+                "Student Name: " + name + "<br>" +
+                "Total Marks: " + total + "<br>" +
+                "Average: " + average + "%<br>" +
+                "Grade: " + grade;
+        }
+    </script>
+
+</body>
+</html>
